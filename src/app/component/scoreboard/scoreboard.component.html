@@ -1,0 +1,21 @@
+<h1>Player items</h1>
+<div class="scoreboard">
+  <div class="header">
+    <div class="column">Item</div>
+    <div class="column">Qty</div>
+    <div class="column">Score</div>
+  </div>
+  <div class="item-container">
+    <ng-container *ngIf="collection?.items?.length"></ng-container>
+    <div *ngFor="let item of collection?.items" class="item">
+      <div class="column">{{item.id}}</div>
+      <div class="column">{{item.quantity}}</div>
+      <div class="column">{{item.score}}</div>
+    </div>
+    <ng-container *ngIf="!collection?.items?.length">
+      <div class="no-items">You have no items collected</div>
+    </ng-container>
+  </div>
+  <div class="bonus">Bonus: {{(collection?.bonus) ? collection.bonus : '0'}}</div>
+  <div class="total">Total: {{(collection?.score) ? collection.score : '0'}}</div>
+</div>

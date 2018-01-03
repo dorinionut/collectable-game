@@ -1,0 +1,7 @@
+<div *ngIf="collectables?.length" class="collectable-container">
+  <div *ngFor="let collectable of collectables" (click)="add(collectable)" class="collectable-wrapper">
+    <div class="collectable">
+      {{collectable.id}}
+    </div>
+  </div>
+</div>
